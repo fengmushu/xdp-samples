@@ -1,0 +1,4 @@
+/example
+/example.bpf.o
+/example.skel.h
+/vmlinux.h
