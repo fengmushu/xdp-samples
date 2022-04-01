@@ -9,17 +9,7 @@ KERNELSRC := $(KERNELSRC_DIR)
 # Libbpf dependencies
 LIBBPF = $(KERNELSRC)/tools/lib/bpf/libbpf.a
 
-# List of programs to build
-tprogs-y := xdp_router_ipv4
-
-xdp_router_ipv4-objs := xdp_router_ipv4_user.o
-
-# Tell kbuild to always build the programs
-always-y := $(tprogs-y)
-
-always-y += xdp_router_ipv4_kern.o
-
-
+-include $(BPF_SAMPLES_PATH)/Programs.mk
 
 ifeq ($(ARCH), arm)
 # Strip all except -D__LINUX_ARM_ARCH__ option needed to handle linux
