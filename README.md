@@ -81,4 +81,4 @@ kernel/samples/bpf
 [issues-url]: https://github.com/fengmushu/xdp-samples/issues
 
 [license-shield]: https://img.shields.io/badge/license-MIT-green.svg?style=flat-square
-[license-url]: https://github.com/fengmushu/xdp-samples/LICENSE.txt
+[license-url]: https://github.com/fengmushu/xdp-samples/blob/master/LICENSE.txt
