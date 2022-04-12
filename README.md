@@ -11,10 +11,16 @@ OpenWRT 编译环境支持 bpftool, 需开启 LLVM 工具链
 <!-- PROJECT LOGO -->
 
 ```bash
+# openwrt 配置
 make menuconfig
 
-CONFIG_BPF_TOOLCHAIN_BUILD_LLVM=y
 CONFIG_PACKAGE_bpftool-full
+CONFIG_BPF_TOOLCHAIN_BUILD_LLVM=y
+
+# linux 配置
+make kernel_menuconfig
+
+CONFIG_DEBUG_INFO_BTF=y
 ```
 
 #### 安装 LLVM 到 $LLVM_DIR, 导出环境变量
@@ -60,6 +66,12 @@ always-y += xdp_router_ipv4_kern.o
 #### 内核自带 例程
 
 kernel/samples/bpf
+
+
+#### FAQ
+
+- BTF: .tmp_vmlinux.btf: pahole (pahole) is not available
+	- apt-get install dwarves
 
 
 <!-- links -->
